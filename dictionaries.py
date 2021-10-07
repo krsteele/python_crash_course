@@ -161,4 +161,172 @@ print(languages)
 # unlike lists and dictionaries, sets do not retain items in any specific order
 
 # Nesting
-# 
+
+# A List of Dictionaries
+invader_0 = {'color': 'green', 'points': 5}
+invader_1 = {'color': 'yellow', 'points': 10}
+invader_2 = {'color': 'red', 'points': 15}
+
+invaders = [invader_0, invader_1, invader_2]
+
+for invader in invaders: 
+    print(invader)
+
+# automatically generate a list of dictionaries
+
+# Make an empty list for storing laser cats
+laser_cats = []
+
+# Make 30 laser cats
+# range() tells python how many times we want the loop to repeat
+for cat_number in range(30):
+    new_cat = {'color': 'tuxedo', 'points': 5, 'speed': 'slinking '}
+    laser_cats.append(new_cat)
+
+# to change the first three cats use a for loop and if statement
+for cat in laser_cats[:3]:
+    if cat['color'] == 'tuxedo':
+        cat['color'] = 'calico'
+        cat['speed'] = 'gamboling'
+        cat['points'] = 10
+
+# Show the first 5 laser cats
+# here we use a slice to print the first five laser cats
+for cat in laser_cats[:5]:
+    print(cat)
+print("...")
+
+# Show how many laser cats have been created
+print(f"Total number of laser cats: {len(laser_cats)}")
+
+# A List in a Dictionary
+
+pizza = {
+    'crust': 'thick',
+    'toppings': ['mushrooms', 'extra cheese'],
+}
+
+print(f"You ordered a {pizza['crust']}-pizza " 
+    "with the following toppings:")
+
+for topping in pizza['toppings']:
+    print(f"\t{topping}")
+
+# A Dictionary in a Dictionary
+# This can get complicated quickly
+users = {
+    'aeinstein': {
+        'first': 'albert',
+        'last': 'einstein',
+        'location': 'princeton'
+    },
+    'mcurie': {
+        'first': 'marie',
+        'last': 'curie',
+        'location': 'paris'
+    },
+}
+
+for username, user_info in users.items():
+    print(f"\nUsername: {username}")
+    full_name = f"{user_info['first']} {user_info['last']}"
+    location = user_info['location']
+
+    print(f"\tFull name: {full_name.title()}")
+    print (f"\tLocation: {location.title()}")
+
+
+# Exercise 6-1
+person_1 = {
+    'first': 'bobby',
+    'last': 'Gee',
+    'age': 40,
+    'city': 'Tokyo'
+}
+
+print(person_1['first'].title())
+print(person_1['last'].title())
+print(person_1['age'])
+print(person_1['city'].title())
+
+# Exercise 6-2
+favorite_numbers = {
+    'hunter': 7,
+    'conifer': 5,
+    'megan': 13,
+    'tim': 592,
+    'hilda': 6,
+}
+
+for friend, number in favorite_numbers.items():
+    print(f"{friend.title()}'s favoite number is {number}.")
+
+
+# Exercise 6-3
+glossary = {
+    'variables': 'labels that you can assign to values',
+    'string': 'a series of characters',
+    'float': 'any number with a decimal point',
+    'list': 'a collection of items in a particular order',
+    'looping': 'running through all entries in a list and performing the same task with each item',
+    'dictionary': 'a collection of key-value pairs in python',
+}
+
+for word, meaning in glossary.items():
+    print(f"\n{word}: {meaning}")
+
+
+# Exercise 6-4
+
+# Exercise 6-5
+rivers = {
+    'nile': 'egypt',
+    'amazon': 'brazil',
+    'mississipi': 'united states',
+}
+
+for river, country in rivers.items(): 
+    print(f"\nThe {river.title()} river runs through {country.title()}.")
+
+
+print("Rivers in dictionary:")
+for river in rivers.keys():
+    print(river.title())
+
+
+print("Countries with major rivers:")
+for country in rivers.values(): 
+    print(country.title())
+
+
+# Exercise 6-6 
+poll_prospects = ['bobby', 'ashley', 'alisha', 'kristen', 'tim', 'megan', 'hilda']
+
+for name in favorite_colors.keys():
+    if name in poll_prospects:
+        color = favorite_colors[name]
+        print(f"\n{name.title()}, I see you like the color {color}!")
+    else:
+        print(f"\n{name.title()}, please take our color poll!")
+        # else statement does not work and I don't know why
+
+# Exercise 6-7
+person_2 = {
+    'first': 'cat',
+    'last': 'sandwich',
+    'age': 38,
+    'city': 'new york'
+}
+person_3 = {
+    'first': 'peter',
+    'last': 'piper',
+    'age': 100,
+    'city': 'peoria'
+} 
+
+people = [person_1, person_2, person_3]
+
+for person in people: 
+    print(f"\nName: {person['first'].title()} {person['last'].title()}")
+    print(f"Age: {person['age']}")
+    print(f"City: {person['city'].title()}")
