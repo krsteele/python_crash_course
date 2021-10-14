@@ -10,6 +10,7 @@ class User:
         self.last_name = last_name
         self.age = age
         self.date_joined = date_joined
+        self.login_attempts = 0
 
     def describe_user(self):
         """A description of the user."""
@@ -18,6 +19,12 @@ class User:
     def greet_user(self):
         """A personalized greeting to the user."""
         print(f"\nWelcome back, {self.first_name}!")
+
+    def increment_login_attempts(self):
+        self.login_attempts += 1
+
+    def reset_login_attempts(self):
+        self.login_attempts = 0
 
 
 user_1 = User('Jeff', 'Whozit', 47, '10-28-2014')
@@ -32,3 +39,19 @@ user_2.greet_user()
 
 user_3.describe_user()
 user_3.greet_user()
+
+# 9-5: Login Attempts
+# Add an attribute called login_attempts to your User class. 
+# Write a method to increment the value of login_attempts by 1
+# Write another method that resets the value of login_attempts to 0
+user_4 = User('Becky', 'Johnson', 28, '05-21-2015')
+user_4.increment_login_attempts()
+user_4.increment_login_attempts()
+user_4.increment_login_attempts()
+user_4.increment_login_attempts()
+user_4.increment_login_attempts()
+user_4.increment_login_attempts()
+user_4.increment_login_attempts()
+print("Login attempts: ", user_4.login_attempts)
+user_4.reset_login_attempts()
+print("Login attempts: ", user_4.login_attempts)

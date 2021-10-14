@@ -8,6 +8,7 @@ class Restaurant:
         """Initialize restaurant_name and cuisine_type attributes"""
         self.restaurant_name = restaurant_name
         self.cuisine_type = cuisine_type
+        self.number_served = 0
 
     def describe_restaurant(self):
         """Describe the restaurant"""
@@ -16,6 +17,14 @@ class Restaurant:
     def open_restaurant(self):
         """Simulate opening the restaurant"""
         print(f"{self.restaurant_name} is now open!")
+
+    def set_number_served(self, customers):
+        """Set number_served to a given value."""
+        self.number_served = customers
+
+    def increment_number_served(self, add_customers):
+        """Add the given amount to number_served."""
+        self.number_served += add_customers
 
 
 restaurant = Restaurant('La Choza', 'New Mexican')
@@ -35,3 +44,17 @@ restaurant_3 = Restaurant('Italia', 'Italian')
 restaurant_1.describe_restaurant()
 restaurant_2.describe_restaurant()
 restaurant_3.describe_restaurant()
+
+# 9-4: Number Served
+# Add an attribute called number_served with a default value of 0.
+restaurant_4 = Restaurant("Newby's Deli", "Deli")
+print(restaurant_4.number_served)
+# Change the value of number_served and print it again
+restaurant_4.number_served = 487
+print(restaurant_4.number_served)
+# Call the new method set_number_served and set a new value, then print it
+restaurant_4.set_number_served(594)
+print(restaurant_4.number_served)
+# Call the new method increment_number_served and pass it a value to add to the existing value, then print it
+restaurant_4.increment_number_served(243)
+print(restaurant_4.number_served)
