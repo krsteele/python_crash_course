@@ -55,3 +55,33 @@ user_4.increment_login_attempts()
 print("Login attempts: ", user_4.login_attempts)
 user_4.reset_login_attempts()
 print("Login attempts: ", user_4.login_attempts)
+
+class Privileges:
+    """A representation of user privileges"""
+
+    def __init__(self):
+        """Initialize attributes of privileges."""
+        self.privileges = ['can delete post', 'can add post', 'can ban user', 'can demand candy']
+
+    def show_privileges(self):
+        """Print a list of privileges"""
+        print(f"\nKnown Privileges:")
+        for privilege in self.privileges:
+            print(f"- {privilege}")
+
+# 9-7: Admin
+class Admin(User):
+    """A special type of User, inheriting from the User class"""
+
+    def __init__(self, first_name, last_name, age, date_joined):
+        """
+        Initialize attributes of the parent class.
+        Then initialize attributes specific to an admin.
+        """
+        super().__init__(first_name, last_name, age, date_joined)
+        self.wizardry_level = 5
+        self.privileges = Privileges()
+
+
+admin_user = Admin('Larry', 'Dog', 6, '09-28-2018')
+admin_user.privileges.show_privileges()

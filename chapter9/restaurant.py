@@ -1,4 +1,5 @@
-# 9-1 and 9-2
+
+
 
 # 9-1: Restaurant
 class Restaurant:
@@ -58,3 +59,30 @@ print(restaurant_4.number_served)
 # Call the new method increment_number_served and pass it a value to add to the existing value, then print it
 restaurant_4.increment_number_served(243)
 print(restaurant_4.number_served)
+
+
+# 9-6: Ice Cream Stand
+# Write a class that inherits from the Restaurant class. 
+# Add an attribute called flavors that stores a list of ice cream flavors and a method that displays these flavors.
+
+class IceCreamStand(Restaurant):
+    """Represent aspects of a restaurant, specific to an ice cream stand."""
+
+    def __init__(self, restaurant_name, cuisine_type):
+        """
+        Initialize attributes of the parent class.
+        Then initialize attributes specific to an electric car.
+        """
+        super().__init__(restaurant_name, cuisine_type)
+        self.flavors = ['vanilla', 'chocolate', 'salty caramel', 'rainbow frozen yogurt', 'pistachio honey', 'strawberry']
+
+    def list_flavors(self):
+        """Print a list of available flavors."""
+        print(f"\nFlavors available at {self.restaurant_name}")
+        for flavor in self.flavors:
+            print(f"- {flavor}")
+
+
+ice_cream = IceCreamStand("Skippy's Ice Creams", "Ice Cream")
+print(ice_cream.describe_restaurant())
+ice_cream.list_flavors()

@@ -80,6 +80,13 @@ class Battery:
 
         print(f"This car can go about {range} miles on a full charge.")
 
+    def upgrade_battery(self):
+        if self.battery_size < 100:
+            self.battery_size = 100
+        else:
+            pass
+
+
 
 # Inheritance
 
@@ -126,3 +133,11 @@ my_tesla = ElectricCar('tesla', 'model s', 2019)
 print(my_tesla.get_descriptive_name())
 my_tesla.battery.describe_battery()
 my_tesla.battery.get_range()
+
+new_e_car = ElectricCar('nissan', 'leaf', 2020)
+print(new_e_car.get_descriptive_name())
+new_e_car.battery.describe_battery()
+new_e_car.battery.get_range()
+new_e_car.battery.upgrade_battery()
+new_e_car.battery.describe_battery()
+new_e_car.battery.get_range()
