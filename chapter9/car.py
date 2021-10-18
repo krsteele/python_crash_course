@@ -1,3 +1,5 @@
+"""A set of classes used to represent gas and electric cars."""
+
 # You can modify the attributes of an instance directly or write methods that update attributes in specific ways.
 
 class Car:
@@ -35,23 +37,6 @@ class Car:
     def increment_odometer(self, miles):
         """Add the given amount to the odometer reading."""
         self.odometer_reading += miles
-
-
-my_new_car = Car('audi', 'a4', 2019)
-print(my_new_car.get_descriptive_name())
-my_new_car.read_odometer()
-
-# One way to modify an attribute's value is to set it directly
-my_new_car.odometer_reading = 23
-my_new_car.read_odometer()
-
-# Here, we call a method to update the odometer_reading attribute
-my_new_car.update_odometer(42)
-my_new_car.read_odometer()
-
-# Here, we call a method to increment the mileage by the number passed.
-my_new_car.increment_odometer(100)
-my_new_car.read_odometer()
 
 
 # Instances as attributes
@@ -128,16 +113,3 @@ class ElectricCar(Car):
     # fit what you're trying to model with the child class by defining a method
     # in the child class with the same name as the method you want to override. 
 
-
-my_tesla = ElectricCar('tesla', 'model s', 2019)
-print(my_tesla.get_descriptive_name())
-my_tesla.battery.describe_battery()
-my_tesla.battery.get_range()
-
-new_e_car = ElectricCar('nissan', 'leaf', 2020)
-print(new_e_car.get_descriptive_name())
-new_e_car.battery.describe_battery()
-new_e_car.battery.get_range()
-new_e_car.battery.upgrade_battery()
-new_e_car.battery.describe_battery()
-new_e_car.battery.get_range()
