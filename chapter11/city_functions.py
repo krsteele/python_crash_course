@@ -1,5 +1,10 @@
-# Exercise 11-1: City, Country
-def city_country_name(city, country):
+# Exercise 11-1: City, Country and 11-2: Population
+
+def city_country_name(city, country, population=''):
     """Generate neatly formatted city and country."""
-    formatted_name = f"{city}, {country}"
+    if population:
+        formatted_name = f"{city}, {country} - population: {population}"
+    else:
+        formatted_name = f"{city}, {country}"
+
     return formatted_name.title()
