@@ -7,8 +7,8 @@ class Employee:
         self.last_name = last
         self.annual_salary = salary
 
-    def give_raise(self, raise=5000):
+    def give_raise(self, salary_bump=5000):
         """Add a raise to the annual_salary attribute."""
-        self.salary += raise
+        self.annual_salary += salary_bump
 
     
